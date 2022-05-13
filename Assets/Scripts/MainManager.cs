@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class MainManager : MonoBehaviour
 {
-    public static MainManager Instance;
+    public static MainManager Instance { get; private set; }
     public Color TeamColor;
 
     private void Awake()
@@ -19,7 +19,7 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
         LoadColor();
     }
 
